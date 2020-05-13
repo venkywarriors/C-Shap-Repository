@@ -1,5 +1,5 @@
-## System.Collections
-### :dart:IDictionary<TKey,TValue> Interface <br> 
+# System.Collections
+## IDictionary<TKey,TValue> Interface <br> 
 Assembly: Mscorlib.dll <br> 
 Namespace: System.Collections <br> 
 Summary: Represents a collection of key-and-value pairs. <br> 
@@ -8,18 +8,17 @@ The IDictionary class is the base interface for collections of key-and-value pai
 Each element is a key-and-value pair stored in a DictionaryEntry object.
 
 Dictionary cannot include duplicate or null keys, where as values can be duplicated or set as null. Dictionary maintains insertion order of keys.
+### :dart:Add Elements into Dictionary<br> 
 ```
-@Test
-public void navigation() throws Exception{
+The IDictionary type instance has one more overload for the Add() method. It accepts a KeyValuePair<TKey, TValue> struct as a parameter.
 
-  MyScreenRecorder.startRecording("Navigation_recording");
-  
-  /*
-                       your code goes here
-                */
-               MyScreenRecorder.stopRecording();
+IDictionary<int, string> dict = new Dictionary<int, string>();
 
-}
+dict.Add(new KeyValuePair<int, string>(1, "One"));
+dict.Add(new KeyValuePair<int, string>(2, "Two"));
+
+//The following is also valid
+dict.Add(3, "Three");
 ```
 #### A difference in style: IDictionary vs Dictionary
 IDictionary is an interface and Dictionary is a class.
