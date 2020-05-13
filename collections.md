@@ -1,8 +1,8 @@
 ## System.Collections
 ### :dart:IDictionary<TKey,TValue> Interface <br> 
-Assembly: Mscorlib.dll
-Namespace: System.Collections
-Summary: Represents a collection of key-and-value pairs.
+Assembly: Mscorlib.dll <br> 
+Namespace: System.Collections <br> 
+Summary: Represents a collection of key-and-value pairs. <br> 
 
 The IDictionary class is the base interface for collections of key-and-value pairs.
 Each element is a key-and-value pair stored in a DictionaryEntry object.
