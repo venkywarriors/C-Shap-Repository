@@ -61,11 +61,29 @@ Key: 1, Value: One
 Key: 2, Value: Two
 Key: 3, Value: Three
 ```
-### :dart:Accessing Dictionary Elements<br> 
+### :dart:Check for an Existing Elements<br> 
 ```
-```
-### :dart:Accessing Dictionary Elements<br> 
-```
+dict.Remove(1); // removes the item which has 1 as a key
+// removes nothing because value One1 is not matching
+dict.Remove(new KeyValuePair<int, string>(2, "Two1")); 
+dict.ContainsKey(1); // returns true
+dict.ContainsKey(4); // returns false
+
+dict.Contains(new KeyValuePair<int,string>(1,"One")); // returns true
+
+string result;
+
+if(dict.TryGetValue(4, out result))
+{
+    Console.WriteLine(result);
+}
+else
+{
+    Console.WriteLine("Could not find the specified key.");
+}
+
+//Prints Could not find the specified key.
+
 ```
 #### A difference in style: IDictionary vs Dictionary
 IDictionary is an interface and Dictionary is a class.
