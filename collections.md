@@ -7,7 +7,7 @@ Summary: Represents a collection of key-and-value pairs. <br>
 The IDictionary class is the base interface for collections of key-and-value pairs.
 Each element is a key-and-value pair stored in a DictionaryEntry object.
 
-Each association must have a unique key that is not null, but the value of an association can be any object reference, including a null reference. The IDictionary interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
+Dictionary cannot include duplicate or null keys, where as values can be duplicated or set as null. Dictionary maintains insertion order of keys.
 ```
 @Test
 public void navigation() throws Exception{
