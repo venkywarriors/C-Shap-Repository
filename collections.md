@@ -1,15 +1,13 @@
-### :dart:Record your Test Execution in Selenium : <br> 
-Monte Screen Recorder, a Java library that can assist you in creating videos of your Selenium tests. Add Screen Recorder
-Maven Dependencies
+## System.Collections
+### :dart:IDictionary<TKey,TValue> Interface <br> 
+Assembly: Mscorlib.dll
+Namespace: System.Collections
+Summary: Represents a collection of key-and-value pairs.
 
-How to Implement in our project :
+The IDictionary class is the base interface for collections of key-and-value pairs.
+Each element is a key-and-value pair stored in a DictionaryEntry object.
 
-We have one Java File of Recording screen functionality written and have attached as java file name as 'MyScreenRecorder.java' file
-
-This <a href="https://github.com/venkywarriors619/Generic-functions-Selenium-java/blob/master/MyScreenRecorder.java">'MyScreenRecorder.java'</a> file is the base function and we can use the method as 'MyScreenRecorder.startRecording("yourtestcase_recording")' in our own test case file.
-
-For Example : Your Java file has the navigation function and if you want to record some scenarios, then we can use the method as 'MyscreenRecorder.startRecording' to start record and 'MyScreenRecorder.stopRecording' to stop the record.
-Reference Link: http://www.randelshofer.ch/monte/
+Each association must have a unique key that is not null, but the value of an association can be any object reference, including a null reference. The IDictionary interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
 ```
 @Test
 public void navigation() throws Exception{
@@ -23,3 +21,17 @@ public void navigation() throws Exception{
 
 }
 ```
+#### A difference in style: IDictionary vs Dictionary
+IDictionary is an interface and Dictionary is a class.
+
+Dictionary implements IDictionary.
+
+That means that this is possible to refer to Dictionary instance with/by IDictionary instance and invoke most of the Dictionary methods and properties through IDictionary instance.
+
+This is very recommended to use interfaces as many as possible, because interfaces abstracts the modules and assemblies of the applications, allows polymorphism, which is both very common and useful in many situations and cases and allows replacing one module by another without touching the other modules.
+
+Suppose that in the present, the programmer wrote:
+
+IDictionary<string> dictionary = new Dictionary<string>();
+
+And now dictionary invokes the methods and properties of Dictionary<string>.
