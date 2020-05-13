@@ -20,6 +20,53 @@ dict.Add(new KeyValuePair<int, string>(2, "Two"));
 //The following is also valid
 dict.Add(3, "Three");
 ```
+### :dart:Dictionary Initialization<br> 
+```
+IDictionary<int, string> dict = new Dictionary<int, string>()
+                                            {
+                                                {1,"One"},
+                                                {2, "Two"},
+                                                {3,"Three"}
+                                            };
+```
+### :dart:Accessing Dictionary Elements<br> 
+```
+IDictionary<int, string> dict = new Dictionary<int, string>()
+                                            {
+                                                {1,"One"},
+                                                {2, "Two"},
+                                                {3,"Three"}
+                                            };
+
+foreach (KeyValuePair<int, string> item in dict)
+{
+    Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
+}
+
+for (int i = 0; i < dict.Count; i++)
+{
+    Console.WriteLine("Key: {0}, Value: {1}", 
+                                            dict.ElementAt(i).Key, 
+                                            dict.ElementAt(i).Value);
+}
+
+Console.WriteLine(dict[1]); //returns One
+Console.WriteLine(dict[2]); // returns Two
+dict.ContainsKey(1); // returns true
+dict.ContainsKey(4); // returns false
+```
+#### Output<br> 
+```
+Key: 1, Value: One
+Key: 2, Value: Two
+Key: 3, Value: Three
+```
+### :dart:Accessing Dictionary Elements<br> 
+```
+```
+### :dart:Accessing Dictionary Elements<br> 
+```
+```
 #### A difference in style: IDictionary vs Dictionary
 IDictionary is an interface and Dictionary is a class.
 
