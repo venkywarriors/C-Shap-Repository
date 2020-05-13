@@ -9,9 +9,9 @@ Each element is a key-and-value pair stored in a DictionaryEntry object.
 
 Dictionary cannot include duplicate or null keys, where as values can be duplicated or set as null. Dictionary maintains insertion order of keys.
 ### :dart:Add Elements into Dictionary<br> 
-```
-The IDictionary type instance has one more overload for the Add() method. It accepts a KeyValuePair<TKey, TValue> struct as a parameter.
 
+The IDictionary type instance has one more overload for the Add() method. It accepts a KeyValuePair<TKey, TValue> struct as a parameter.
+```
 IDictionary<int, string> dict = new Dictionary<int, string>();
 
 dict.Add(new KeyValuePair<int, string>(1, "One"));
@@ -30,7 +30,7 @@ That means that this is possible to refer to Dictionary instance with/by IDictio
 This is very recommended to use interfaces as many as possible, because interfaces abstracts the modules and assemblies of the applications, allows polymorphism, which is both very common and useful in many situations and cases and allows replacing one module by another without touching the other modules.
 
 Suppose that in the present, the programmer wrote:
-
+```
 IDictionary<string> dictionary = new Dictionary<string>();
-
+```
 And now dictionary invokes the methods and properties of Dictionary<string>.
