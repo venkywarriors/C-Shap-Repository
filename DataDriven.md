@@ -1,6 +1,11 @@
 ### :dart:Read Configuration File in C# using ConfigurationManager
-Add Reference to ConfigurationManager
-Right Click on the References and select Add Reference... Now search for System.ConfigurationManager. Select it and this will add to your Project References
+Connection strings can be stored as key/value pairs in the connectionStrings section of the configuration element of an application configuration file. Child elements include add, clear, and remove.
+
+Step 1: Right-click on references tab to add reference.<br>
+Step 2: Click on Assemblies tab<br>
+Step 3: Search for 'System.Configuration'<br>
+Step 4: Click OK.<br>
+<img src="https://toolsqa.com/wp-content/gallery/csharp/ConfigurationManager_1.png" alt="Configuration Manager" width="1000" height="400">
 App.config File
 ```
 <configuration>
