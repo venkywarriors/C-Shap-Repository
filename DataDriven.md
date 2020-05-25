@@ -166,7 +166,8 @@ public List< string > Select()
         SqlCommand cmd = new SqlCommand(query, connection);
         //Create a data reader and Execute the command
         DataReader dataReader = cmd.ExecuteReader();
-        
+        //Column Count 
+	int rowCount dataReader.VisibleFieldCount;
         //Read the data and store them in the list
         while (dataReader.Read())
         {
@@ -210,6 +211,11 @@ public List< string > GetDataFromDB()
         //Read the data and store them in the list
         DataTable dataTable = new DataTable();
 	dataTable.Load(dataReader);
+	//Read Row count
+	int rowCount = dataTable.Rows.Count;
+	//Read Column count
+	int colCount = dataTable.Columns.Count;
+	//Read Column names
 	foreach (DataRow col in dataTable.columns)
 	{
 	   list.add(col.ColumnName);
@@ -235,5 +241,26 @@ public List< string > GetDataFromDB()
     {
         return list;
     }
+}
+
+//Get Rows Count
+public int RowsCont()
+{
+    string query = "SELECT * FROM tableinfo";
+	int count=0;
+    //Open connection
+    if (this.OpenConnection() == true)
+    {
+        //Create Command
+        SqlCommand cmd = new SqlCommand(query, connection);
+        //Create a data reader and Execute the command
+        DataReader dataReader = cmd.ExecuteReader();
+
+        while (dataReader.Read())
+        {
+           count++;
+        }
+	return count;
+dataReader.close();	
 }
 ```
