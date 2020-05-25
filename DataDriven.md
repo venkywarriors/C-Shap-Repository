@@ -85,16 +85,155 @@ public static void GetConfigurationUsingSectionGroup()
     }
 }
 ```
-### :dart:Read Configuration File in C# using ConfigurationManager
-Add Reference to ConfigurationManager
-Right Click on the References and select Add Reference... Now search for System.ConfigurationManager. Select it and this will add to your Project References
+### :dart:Connect C# to MySQL
+We will start by adding the MySql Connector library:
 ```
-IWebElement lstTrElem = this.Driver.FindElement(By.Xpath("//select[@class='Rumor']")));
-String actualValue= string.Empty;
-actualValue=lstTrElem.Text; 
-
-if(string.IsNullOrEmpty(actualValue))
+//Add MySql Library
+using MySql.Data.MySqlClient;
+```
+The code in c# to read the data from DB :
+```
+class DBConnect
 {
-	actualValue=!string.IsNullOrEmpty(lstTrElem.GetAttribute("value")) ? lstTrElem.GetAttribute("value") : "0";
+    private SqlConnection connection;
+    private string server;
+    private string database;
+    private string uid;
+    private string password;
+
+    //Constructor
+    public DBConnect()
+    {
+        Initialize();
+    }
+
+    //Initialize values
+    private void Initialize()
+    {
+        server = "localhost"
+        database = "connectcsharptomysql";
+        uid = "username";
+        password = "password";
+        string connectionString;
+        connectionString = "Data Source=" + server + ";" + "Initial Catalog=" + 
+		database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+        connection = new SqlConnection(connectionString);
+    }
+
+//open connection to database
+private bool OpenConnection()
+{
+    try
+    {
+        connection.Open();
+        return true;
+    }
+    catch (MySqlException ex)
+    {
+	Console.WriteLine(ex.Message);
+        return false;
+    }
+}
+
+//Close connection
+private bool CloseConnection()
+{
+    try
+    {
+        connection.Close();
+        return true;
+    }
+    catch (MySqlException ex)
+    {
+        Console.WriteLine(ex.Message);
+        return false;
+    }
+}
+
+public List< string > Select()
+{
+    string query = "SELECT * FROM tableinfo";
+
+    //Create a list to store the result
+    List< string > list = new List< string >();
+
+
+    //Open connection
+    if (this.OpenConnection() == true)
+    {
+        //Create Command
+        SqlCommand cmd = new SqlCommand(query, connection);
+        //Create a data reader and Execute the command
+        DataReader dataReader = cmd.ExecuteReader();
+        
+        //Read the data and store them in the list
+        while (dataReader.Read())
+        {
+            list.Add(dataReader["id"]);
+            list.Add(dataReader["name"]);
+            list.Add(dataReader["age"]);
+        }
+
+        //close Data Reader
+        dataReader.Close();
+
+        //close Connection
+        this.CloseConnection();
+
+        //return list to be displayed
+        return list;
+    }
+    else
+    {
+        return list;
+    }
+}
+
+//Get data from SQL
+public List< string > GetDataFromDB()
+{
+    string query = @"SELECT * FROM tableinfo";
+
+    //Create a list to store the result
+    List< string > list = new List< string >();
+
+
+    //Open connection
+    if (this.OpenConnection() == true)
+    {
+        //Create Command
+        SqlCommand cmd = new SqlCommand(query, connection);
+        //Create a data reader and Execute the command
+        DataReader dataReader = cmd.ExecuteReader();
+        
+        //Read the data and store them in the list
+        DataTable dataTable = new DataTable();
+	dataTable.Load(dataReader);
+	foreach (DataRow col in dataTable.columns)
+	{
+	   list.add(col.ColumnName);
+	}			
+	foreach (DataRow row in dataTable.Rows)
+	{
+		foreach (DataRow col in dataTable.columns)
+		{
+	   		list.add(Convert.ToString(row[col.ColumnName]));
+		}
+	}			
+	
+        //close Data Reader
+        dataReader.Close();
+
+        //close Connection
+        this.CloseConnection();
+
+        //return list to be displayed
+        return list;
+    }
+    else
+    {
+        return list;
+    }
 }
 ```
