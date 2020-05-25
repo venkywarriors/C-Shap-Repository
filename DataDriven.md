@@ -31,7 +31,7 @@ To read the Url from the above config file, use the below code:
 ```
 var url = ConfigurationManager.AppSettings[“URL”];
 
-var folderPath = ConfigurationManager.AppSettings[“FolderPath”];
+var folderPath = ConfigurationManager.AppSettings.Get(“FolderPath”);
 ```
 ### :dart:Read Configuration File in C# using ConfigurationManager
 Add Reference to ConfigurationManager
