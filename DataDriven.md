@@ -346,16 +346,16 @@ namespace CSharpPractice
 	    }
 	}
 
-public void AddNewSheet(string sheetName)
-{
-	OpenExcel();
-	workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
-	xl.Worksheet worksheet = workbook.Worksheets[workbook.Sheets.Count] as xl.Worksheet;
-	workbook.Name = sheetName;            
-	workbook.Save();
-        workbook.Close();
-	CloseExcel();
-}
+	public void AddNewSheet(string sheetName)
+	{
+		OpenExcel();
+		workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
+		xl.Worksheet worksheet = workbook.Worksheets[workbook.Sheets.Count] as xl.Worksheet;
+		workbook.Name = sheetName;            
+		workbook.Save();
+		workbook.Close();
+		CloseExcel();
+	}
 	//Below are the Methods will use to get the CellData using Column number
         public string GetCellData(string sheetName, int colNumber, int rowNumber)
         {
