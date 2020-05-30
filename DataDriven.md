@@ -324,26 +324,27 @@ namespace CSharpPractice
             Marshal.FinalReleaseComObject(xlApp);
             xlApp = null;
         }
-public void CreateExcelDocument()
-{
-// If you are a commercial business and have
-// purchased commercial licenses use the static property
-// LicenseContext of the ExcelPackage class:
-ExcelPackage.LicenseContext = LicenseContext.Commercial;
+	
+	public void CreateExcelDocument()
+	{
+	// If you are a commercial business and have
+	// purchased commercial licenses use the static property
+	// LicenseContext of the ExcelPackage class:
+	ExcelPackage.LicenseContext = LicenseContext.Commercial;
 
-// If you use EPPlus in a noncommercial context
-// according to the Polyform Noncommercial license:
-ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-    String path = @"D:\temp\testsheet3.xlsx";
-    using (ExcelPackage excel = new ExcelPackage())
-    {
-   	excel.Workbook.Worksheets.Add("Sheet1"); 
-	FileInfo newFile = new FileInfo(path);
-	excel.SaveAs(newFile)
-	//Close Excel package 
-        excel.Dispose(); 
-    }
-}
+	// If you use EPPlus in a noncommercial context
+	// according to the Polyform Noncommercial license:
+	ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+	    String path = @"D:\temp\testsheet3.xlsx";
+	    using (ExcelPackage excel = new ExcelPackage())
+	    {
+		excel.Workbook.Worksheets.Add("Sheet1"); 
+		FileInfo newFile = new FileInfo(path);
+		excel.SaveAs(newFile)
+		//Close Excel package 
+		excel.Dispose(); 
+	    }
+	}
 
 public void AddNewSheet(string sheetName)
 {
