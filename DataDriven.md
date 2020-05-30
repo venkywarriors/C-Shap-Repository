@@ -264,7 +264,7 @@ public int RowsCont()
 dataReader.close();	
 }
 ```
-### :dart:Read and Write Data in Excel sheet
+### :dart:Read and Write Data in Excel sheet using Microsoft.Office.Interop.Excel
 For this we need to have the below pre-requisites:
 
 Create a Console Application in Visual Studio
@@ -324,7 +324,37 @@ namespace CSharpPractice
             Marshal.FinalReleaseComObject(xlApp);
             xlApp = null;
         }
+public void CreateExcelDocument()
+{
+// If you are a commercial business and have
+// purchased commercial licenses use the static property
+// LicenseContext of the ExcelPackage class:
+ExcelPackage.LicenseContext = LicenseContext.Commercial;
 
+// If you use EPPlus in a noncommercial context
+// according to the Polyform Noncommercial license:
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+    String path = @"D:\temp\testsheet3.xlsx";
+    using (ExcelPackage excel = new ExcelPackage())
+    {
+   	excel.Workbook.Worksheets.Add("Sheet1"); 
+	FileInfo newFile = new FileInfo(path);
+	excel.SaveAs(newFile)
+	//Close Excel package 
+        excel.Dispose(); 
+    }
+}
+
+public void AddNewSheet(string sheetName)
+{
+	OpenExcel();
+	workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
+	xl.Worksheet worksheet = workbook.Worksheets[workbook.Sheets.Count] as xl.Worksheet;
+	workbook.Name = sheetName;            
+	workbook.Save();
+        workbook.Close();
+	CloseExcel();
+}
 	//Below are the Methods will use to get the CellData using Column number
         public string GetCellData(string sheetName, int colNumber, int rowNumber)
         {
