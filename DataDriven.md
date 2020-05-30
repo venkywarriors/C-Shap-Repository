@@ -551,3 +551,40 @@ static void Main(string[] args)
             Console.Read();
 }
 ```
+### :dart:Read data from Visual Fox Pro database with C#
+```
+using System.Data;
+using System.Data.OleDb;
+
+public class YourClass
+{
+   public void GetYourData()
+   {
+
+	string connectionstring = @"Provider =VFPOLEDB.1;Data Source =C:\ARTIKEL.DBF;"; 
+            string mySelectQuery = "SELECT * FROM ARTIKEL";
+            OleDbConnection cnn = new OleDbConnection(connectionstring);
+            OleDbCommand myCommand = new OleDbCommand(mySelectQuery, cnn);
+
+	try
+            {
+                
+                myCommand.Connection.Open();
+                StringBuilder sb = new StringBuilder();
+                IDataReader reader = myCommand.ExecuteReader();
+                MessageBox.Show("Connection Open ! ");
+                while (reader.Read())
+                {
+                    MessageBox.Show(reader[0].ToString());
+                    sb.Append(string.Format("{0}, {1}", reader[0].ToString(), reader[1].ToString()) + System.Environment.NewLine);
+                }
+                reader.Close();                
+                myCommand.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
+	}
+}
+```
