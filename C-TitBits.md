@@ -42,7 +42,7 @@ TestContext.CurrentContext.Result.Message; (For Test Result Message)
 
 TestContext.CurrentContext.Test.Name; (For Test Method Name)
 ```
-### :dart:Send Email in C#
+### :dart:How to send email with attachment from C#
 ```
 using System;
 using System.Net.Mail;
@@ -86,8 +86,39 @@ using System.Net.Mail;
             {
                 Console.WriteLine(ex.ToString());
             }
-        }
     }
-}
+```
+### :dart:Send Email in C#
+Following code snippets demonstrate how to send an email with HTML body using Spire.Email in C# and VB.NET.<br>
 
+Step 1: Create an instance of MailMessage class and specify sender and recipient in its constructor.<br>
+```
+MailAddress addressFrom = new MailAddress("jack.du@e-iceblue.com", "Jack Du");
+MailAddress addressTo = new MailAddress("susanwong32@outlook.com");
+MailMessage message = new MailMessage(addressFrom, addressTo);
+```
+Step 2: Set the creation date, subject and html body of the message.
+```
+message.Date = DateTime.Now;
+message.Subject = "Sending Email with HTML Body";
+string htmlString = @"<html>
+                      <body>
+                      <p>Dear Ms. Susan,</p>
+                      <p>Thank you for your letter of yesterday inviting me to come for an interview on Friday afternoon, 5th July, at 2:30.
+                              I shall be happy to be there as requested and will bring my diploma and other papers with me.</p>
+                      <p>Sincerely,<br>-Jack</br></p>
+                      </body>
+                      </html>
+                     ";   
+message.BodyHtml = htmlString;
+```
+Step 3: Create a SmtpClient instance, set its properties, and send the email using SendOne() medthod.
+```
+SmtpClient client= new SmtpClient();
+client.Host = "smtp.outlook.com";
+client.Port = 587;
+client.Username = addressFrom.Address;
+client.Password = "password";
+client.ConnectionProtocols = ConnectionProtocols.Ssl;
+client.SendOne(message);
 ```
