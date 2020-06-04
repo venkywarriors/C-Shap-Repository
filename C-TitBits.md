@@ -42,3 +42,52 @@ TestContext.CurrentContext.Result.Message; (For Test Result Message)
 
 TestContext.CurrentContext.Test.Name; (For Test Method Name)
 ```
+### :dart:Send Email in C#
+```
+using System;
+using System.Net.Mail;
+
+
+        private void SendEmailNotification(string EmailContent, bool mSuccess)
+        {
+		string[] ToEmails="raga@jh.com,venky@jh.com,mani@jh.com";
+		string subject="Test email";
+		string content="Hi....";
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("mail.manulife.com");
+                mail.From = new MailAddress("your_email_address@gmail.com");
+                
+
+		
+		foreach(string mailIds in ToEmails)
+		{
+		  mail.To.Add(mailIds);
+		}
+		
+		string Content = "<Html>"+EmailContent+"</Html>";
+		mail.Subject = subject+(mSuccess ?" Completed successfully":"failed")+"for processing date: "+String.Format("{0:yyyy-MM-dd}", DateTime.Now);
+		string endNote="<span style='font-family: sans-serif; font-size: 10px;color:#BBBBBB;'><b>"+"This is an automatically generated email, please do not reply ..."+"</b></span>";
+		mail.Body ="<span style='font-family: Arial; font-size: 13px;color:#000000;'>"+mail.Subject+"<br><br>"+(mSuccess ?content:"<u>Error in detail</u>:"+content)+"<br><br>"+endNote;
+                
+		mail.IsBodyHtml=true;
+                System.Net.Mail.Attachment attachment;
+                attachment = new System.Net.Mail.Attachment("your attachment file");
+                mail.Attachments.Add(attachment);
+
+                //SmtpServer.Port = 587;
+                //SmtpServer.Credentials = new System.Net.NetworkCredential("username", "password");
+                //SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+    }
+}
+
+```
