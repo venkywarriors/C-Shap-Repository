@@ -58,9 +58,7 @@ using System.Net.Mail;
                 MailMessage mail = new MailMessage();
                 SmtpClient SmtpServer = new SmtpClient("mail.manulife.com");
                 mail.From = new MailAddress("your_email_address@gmail.com");
-                
-
-		
+                		
 		foreach(string mailIds in ToEmails)
 		{
 		  mail.To.Add(mailIds);
