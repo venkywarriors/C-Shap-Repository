@@ -47,7 +47,6 @@ TestContext.CurrentContext.Test.Name; (For Test Method Name)
 using System;
 using System.Net.Mail;
 
-
         private void SendEmailNotification(string EmailContent, bool mSuccess)
         {
 		string[] ToEmails="raga@jh.com,venky@jh.com,mani@jh.com";
