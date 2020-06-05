@@ -1,3 +1,14 @@
+### :dart:Nested Ternary operator
+Nested ternary operators are possible by including conditional expression as a second (after ?) or third part (after :) of the ternary operator..
+
+Example: Nested ternary operator
+```
+int x = 2, y = 10;
+
+string result = x > y ? "x is greater than y" : x < y ? 
+                "x is less than y" : x == y ? 
+                "x is equal to y" : "No result";
+```
 ### :dart:Check string value null or Empty and assign default value
 ```
 IWebElement lstTrElem = this.Driver.FindElement(By.Xpath("//select[@class='Rumor']")));
