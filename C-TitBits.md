@@ -41,6 +41,10 @@ TestContext.CurrentContext.Result.StackTrace; (For Stack Trace Message)
 TestContext.CurrentContext.Result.Message; (For Test Result Message)
 
 TestContext.CurrentContext.Test.Name; (For Test Method Name)
+
+TestContext.CurrentContext.Test.ClassName; (For Test Class Name)
+
+TestContext.CurrentContext.TestDirectory; (retrieve your solution directory)
 ```
 ### :dart:How to send email with attachment from C#
 ```
