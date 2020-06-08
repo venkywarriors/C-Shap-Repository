@@ -829,3 +829,20 @@ config.set("com_port", com_port.Text);
 //save
 config.Save()
 ```
+### :dart: Reading XML File using XmlDocument
+```
+static void Main(string[] args)
+        {        
+	    Dictionary xmldata = new Dictionary();
+            XmlDocument xd = new XmlDocument();
+	    FileStream fs = new FileStream("e:\\b.xml", FileMode.Open,FileAccess.Read);
+            xd.Load(fs);
+
+            XmlNode Xmlnode = xd.SelectSingleNodes("/testcase/TestcaseName"); // get all <testcase> nodes
+
+            for(int i=0;i<=Xmlnode.ChildNodes.Count-1;i++)
+            {
+		xmldata.Add(Xmlnode.ChildNodes[i].LocalName,Xmlnode.ChildNodes.Item(i).InnerText.Trim());
+	    }
+	}
+```
