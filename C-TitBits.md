@@ -134,3 +134,18 @@ client.Password = "password";
 client.ConnectionProtocols = ConnectionProtocols.Ssl;
 client.SendOne(message);
 ```
+### :dart: Kill Processes in C#
+```
+using System.Diagnostics;
+
+	private void CloseProcess(string processName)
+	{
+		Process[] _proceses = Process.GetProcessesByName(processName)
+		foreach (Process proces in _proceses)
+		{
+			if(proces.ProcessName.contains(processName))
+     	   			proces.Kill();
+
+		}
+	}
+```
