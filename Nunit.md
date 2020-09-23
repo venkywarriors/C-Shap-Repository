@@ -24,3 +24,4 @@ PageFactory functionality resides in <strong>OpenQA.Selenium.Support.PageObjects
 <li>The PageFactory implementation for C# only searches for elements using the ID. It does not locate the elements using the NAME property. Whereas in Java it also tries to find the element with Name property, if it is not able to find it with ID.<br></li>
 <li>The Java implementation can locate the element even without the FindsBy attribute. This isn’t the case for C#. </li>
 </ol>
+### :dart:PageObjects and PageFactory in C#<br> 
