@@ -18,3 +18,7 @@ Selector Pattern is constructed using HTML tags, attributes and their values. Th
 Like Xpath, CSS selector can also locate web elements having no ID, class or Name.<br>
 <a href="https://www.browserstack.com/guide/css-selectors-in-selenium">CSS Selector to locate web elements</a>
 <a href="https://www.guru99.com/locators-in-selenium-ide.html">Locating by CSS Selector</a>
+
+### The difference between driver.switchTo().defaultContent() and driver.switchTo().parentFrame() <br>
+first method switches the control to the main web page regardless of the number of frames within the web page<br>
+while the second method switches the control to the parent frame of the current frame.<br>
