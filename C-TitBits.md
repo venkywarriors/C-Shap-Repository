@@ -38,6 +38,9 @@ String[] array = {"a", "b", "c", "d", "e"};
          list2.add(text);
       }
       System.out.println(list2);
+
+List<String>l2 = new ArrayList<>();  
+        l2 =  Arrays.asList(array);  
 ```
  C# program
 ```
@@ -48,8 +51,20 @@ ArrayList myArrayList = new ArrayList();
 myArrayList.AddRange(myStringArray);
 ```
 ### :dart:Conversion of ArrayList to Array :
+C#
 ```
 string[] arr = arrList.ToArray(typeof(string)) as string[];
+object[] obj1 = mylist.ToArray();
+string[] str = (string[])mylist.ToArray(typeof(string)); 
+```
+Java
+```
+String[] item = fruitList.toArray(new String[fruitList.size()]);
+//Convert to object array
+Object[] array = list.toArray();
+
+String[] myArray = new String[list.size()];
+      list.toArray(myArray);
 ```
 ### :dart:How to convert an Array to String:
 ```
