@@ -1,3 +1,34 @@
+
+### :dart:How to convert an Array to String:
+Code snippets in Java
+```
+Object[] objArr = new Object[] { 1, 2, 3, 4 };  
+System.out.println("Boolean Array: "+ Arrays.toString(boolArr));
+
+StringBuilder sbf = new StringBuilder("We are geeks "); 
+       char[] astr = new char[] { 'G', 'E', 'E', 'k', 'S' };  
+        // Appends string representation of char 
+        // array to this String Builder 
+        sbf.append(astr);
+```
+Code snippets in C#
+```
+string str = new string(character_array);
+string str = string.Concat(character_array);
+string str = string.Join("", character_array);
+```
+
+### :dart:How to convert an Array to String:
+```
+```
+```
+```
+### :dart:How to convert an Array to String:
+```
+```
+### :dart:How to convert an Array to String:
+```
+```
 ### :dart:Nested Ternary operator
 Nested ternary operators are possible by including conditional expression as a second (after ?) or third part (after :) of the ternary operator..
 
