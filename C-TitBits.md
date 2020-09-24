@@ -47,8 +47,9 @@ ArrayList arrLst = new ArrayList(array);
 ArrayList myArrayList = new ArrayList();
 myArrayList.AddRange(myStringArray);
 ```
-### :dart:How to convert an Array to String:
+### :dart:Conversion of ArrayList to Array :
 ```
+string[] arr = arrList.ToArray(typeof(string)) as string[];
 ```
 ### :dart:How to convert an Array to String:
 ```
