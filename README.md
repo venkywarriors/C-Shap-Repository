@@ -70,8 +70,8 @@ Desired Capabilities class is a component of the org.openqa.selenium.remote.Desi
 ```
 //Accept all certificates Chrome
 DesiredCapabilities capability = DesiredCapabilities.Chrome();
-Environment.SetEnvironmentVariable("webdriver.chrome.driver", "Path to ChromeDriver.exe");
 capability.SetCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+System.setProperty("webdriver.ie.driver","IEDriverServer.exe");
 IWebDriver driver = new RemoteWebDriver(capability);
 
 //Set Chrome options.
