@@ -65,3 +65,44 @@ WebDriver is an interface used to launch different browsers such as Firefox, Chr
 FindBy is an annotation used in Page Object Model design pattern to identify the elements.
 #### FIND ELEMENT:
 Find Element is a method in POM to identify the elements in a web page.
+### What Are Desired Capabilities?
+Desired Capabilities class is a component of the org.openqa.selenium.remote.DesiredCapabilities package. It helps Selenium WebDriver set the properties for the browsers. Using different capabilities from Desired Capabilities class we can set the properties of browsers. For example, the name of the browser, the version of the browser, etc. We use these capabilities as key-value pairs to set them for browsers.
+'''
+//Accept all certificates Chrome
+DesiredCapabilities capability = DesiredCapabilities.Chrome();
+Environment.SetEnvironmentVariable("webdriver.chrome.driver", "Path to ChromeDriver.exe");
+capability.SetCapability(CapabilityType.AcceptSslCertificates, true);
+IWebDriver driver = new RemoteWebDriver(capability);
+//Set Chrome options.
+ChromeOptions options = new ChromeOptions();
+DesiredCapabilities dc = DesiredCapabilities.Chrome();
+dc.SetCapability(ChromeOptions.Capability, options);
+IWebDriver driver = new RemoteWebDriver(dc);
+//Turn off the JavaScript Firefox
+FirefoxProfileManager profileManager = new FirefoxProfileManager();
+FirefoxProfile profile = profileManager.GetProfile("TestProfile");
+profile.SetPreference("javascript.enabled", false);
+IWebDriver driver = new FirefoxDriver(profile);
+//Set the default page load timeout
+driver.Manage().Timeouts().SetPageLoadTimeout(new TimeSpan(10));
+//Start Firefox with plugins
+FirefoxProfile prof = new FirefoxProfile();
+profile.AddExtension(@"C:Location of extension.xpi");
+IWebDriver driver = new FirefoxDriver(prof);
+//Start Chrome with an unpacked extension
+ChromeOptions options = new ChromeOptions();
+options.AddArguments("load-extension=/pathTo/extension");
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.SetCapability(ChromeOptions.Capability, options);
+DesiredCapabilities dc = DesiredCapabilities.Chrome();
+dc.SetCapability(ChromeOptions.Capability, options);
+IWebDriver driver = new RemoteWebDriver(dc);
+//Start Chrome with a packed extension
+ChromeOptions options = new ChromeOptions();
+options.AddExtension(Path.GetFullPath("localpathto/extension.crx"));
+DesiredCapabilities capabilities = new DesiredCapabilities();
+capabilities.SetCapability(ChromeOptions.Capability, options);
+DesiredCapabilities dc = DesiredCapabilities.Chrome();
+dc.SetCapability(ChromeOptions.Capability, options);
+IWebDriver driver = new RemoteWebDriver(dc);
+'''
