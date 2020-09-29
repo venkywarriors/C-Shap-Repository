@@ -1,4 +1,19 @@
+### :dart:How can I find the version of .NET run-time programmatically?
+```
+Running:
+RuntimeInformation.FrameworkDescription
 
+Gives me:
+Full: .NET Framework 4.7.2558.0
+Core: .NET Core 4.6.26212.01
+
+Running:
+Environment.Version
+
+Gives me:
+Full: 4.0.30319.42000
+Core: 4.0.30319.42000
+```
 ### :dart:How to convert an Array to String:
 Code snippets in Java
 ```
