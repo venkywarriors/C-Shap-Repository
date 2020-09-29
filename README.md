@@ -51,7 +51,7 @@ Declaring a method in child class which is already present in the parent class i
 ##### Examples of Method Overriding
 In the WebDriver interface, we use two different methods for navigating or accessing any website i.e. driver.get() and driver.navigate().to().
 <br>These two methods are examples of Method Overriding.<br>
-<strong>Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br></trong>
+<strong>Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br></strong>
 * The get() method does not load the web page completely if you are going to do some other operation after loading a page. This is the reason for which get() is faster than navigate().
 * Using get() method, you can not traverse back and forward whereas Navigate() supports back and forth traversal of a web page using navigate().forward() and navigate().back().
 ### ENCAPSULATION
