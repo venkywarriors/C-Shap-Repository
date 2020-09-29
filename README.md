@@ -66,7 +66,8 @@ FindBy is an annotation used in Page Object Model design pattern to identify the
 #### FIND ELEMENT:
 Find Element is a method in POM to identify the elements in a web page.
 ### What Are Desired Capabilities?
-Desired Capabilities class is a component of the org.openqa.selenium.remote.DesiredCapabilities package. It helps Selenium WebDriver set the properties for the browsers. Using different capabilities from Desired Capabilities class we can set the properties of browsers. For example, the name of the browser, the version of the browser, etc. We use these capabilities as key-value pairs to set them for browsers.
+Desired Capabilities class is a component of the org.openqa.selenium.remote.DesiredCapabilities package. It helps Selenium WebDriver set the properties for the browsers. Using different capabilities from Desired Capabilities class we can set the properties of browsers. For example, the name of the browser, the version of the browser, etc. We use these capabilities as key-value pairs to set them for browsers.<br>
+<a href="https://www.guru99.com/desired-capabilities-selenium.html">Desired Capabilities selenium</a>
 ```
 //Accept all certificates Chrome
 DesiredCapabilities capability = DesiredCapabilities.Chrome();
