@@ -31,9 +31,9 @@ In Page Object Model design pattern, we write locators (such as id, name, xpath 
 <br>
 Abstraction is the methodology of hiding the implementation of internal details and showing the functionality to the users.
 ### INTERFACE
-WebDriver itself is an Interface. So based on the above statement WebDriver driver = new FirefoxDriver(); WebDriver driver = new ChromeDriver(); we are initializing Firefox browser using Selenium WebDriver. It means we are creating a reference variable (driver) of the interface (WebDriver) and creating an Object. Here WebDriver is an Interface as mentioned earlier and FirefoxDriver is a class.
+WebDriver itself is an Interface. So based on the above statement WebDriver driver = new FirefoxDriver(); WebDriver driver = new ChromeDriver(); we are initializing Firefox browser using Selenium WebDriver. <br>It means we are creating a reference variable (driver) of the interface (WebDriver) and creating an Object. Here WebDriver is an Interface as mentioned earlier and FirefoxDriver is a class.
 <br>
-An interface in Java looks similar to a class but both the interface and class are two different concepts. An interface can have methods and variables just like the class but the methods declared in interface are by default abstract. We can achieve 100% abstraction and multiple inheritance in Java with Interface.
+An interface in Java looks similar to a class but both the interface and class are two different concepts.<br> An interface can have methods and variables just like the class but the methods declared in interface are by default abstract. We can achieve 100% abstraction and multiple inheritance in Java with Interface.
 ### INHERITANCE
 We create a Base Class in the Framework to initialize WebDriver interface, WebDriver waits, Property files, Excels, etc., in the Base Class.
 <br>
@@ -51,8 +51,7 @@ Declaring a method in child class which is already present in the parent class i
 ##### Examples of Method Overriding
 In the WebDriver interface, we use two different methods for navigating or accessing any website i.e. driver.get() and driver.navigate().to().
 <br>These two methods are examples of Method Overriding.<br>
-Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br>
-
+<strong>Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br></trong>
 * The get() method does not load the web page completely if you are going to do some other operation after loading a page. This is the reason for which get() is faster than navigate().
 * Using get() method, you can not traverse back and forward whereas Navigate() supports back and forth traversal of a web page using navigate().forward() and navigate().back().
 ### ENCAPSULATION
