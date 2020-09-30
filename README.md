@@ -52,7 +52,31 @@ We use implicit wait in Selenium. Implicit wait is an example of overloading. In
 <br>
 A class having multiple methods with same name but different parameters is called Method Overloading. Browser capabilities selenium is method overloading.
 <br>
-Some more examples of Method Overloading in Selenium are present in methods of Actions Class and Assert class in TestNG as shown below:
+Some more examples of Method Overloading in Selenium are present in methods of Actions Class and Assert class in TestNG and driver.switchto().frame(parameter)
+```
+class Demo {
+ public void displayPattern(){
+   for(int i = 0; i < 10; i++) {
+     System.out.print("*");
+   }
+ }
+ private void displayPattern(char symbol) {
+   for(int i = 0; i < 10; i++) {
+     System.out.print(symbol);
+   }
+ }
+ public static void main(String[] args) {
+   Demo d1 = new Demo();
+   d1.displayPattern();
+   System.out.println("\n");
+   d1.displayPattern('#');
+ }
+}
+
+Output:
+**********
+##########
+```
 #### METHOD OVERRIDING
 Browser capabilities selenium understand this you need to understand Overriding in Java.<br>
 Declaring a method in child class which is already present in the parent class is called Method Overriding. Examples are get and navigate methods of different drivers in Selenium<br>
@@ -109,6 +133,30 @@ In the WebDriver interface, we use two different methods for navigating or acces
 <strong>Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br></strong>
 * The get() method does not load the web page completely if you are going to do some other operation after loading a page. This is the reason for which get() is faster than navigate().
 * Using get() method, you can not traverse back and forward whereas Navigate() supports back and forth traversal of a web page using navigate().forward() and navigate().back().
+#### Super keyword in Method Overriding
+```
+class ABC{
+   public void myMethod()
+   {
+	System.out.println("Overridden method");
+   }	   
+}
+class Demo extends ABC{
+   public void myMethod(){
+	//This will call the myMethod() of parent class
+	super.myMethod();
+	System.out.println("Overriding method");
+   }
+   public static void main( String args[]) {
+	Demo obj = new Demo();
+	obj.myMethod();
+   }
+}
+Output:
+
+Overridden method
+Overriding method
+```
 ### ENCAPSULATION
 The classes in a framework are an example of Encapsulation. In these POM Classes, we declare the data members using @FindBy and initialize them using a constructor with initElement() to utilize them in the test methods.
 <br>Encapsulation is a mechanism of binding code and data together in a single unit.
