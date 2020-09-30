@@ -59,6 +59,49 @@ Declaring a method in child class which is already present in the parent class i
 <strong>Rules of method overriding</strong>
 * Argument list: The argument list of overriding method (method of child class) must match the Overridden method(the method of parent class). The data types of the arguments and their sequence should exactly match.
 * Access Modifier of the overriding method (method of subclass) cannot be more restrictive than the overridden method of parent class. For e.g. if the Access Modifier of parent class method is public then the overriding method (child class method ) cannot have private, protected and default Access modifier,because all of these three access modifiers are more restrictive than public.
+```
+class MyBaseClass{
+   public void disp()
+   {
+       System.out.println("Parent class method");
+   }
+}
+class MyChildClass extends MyBaseClass{
+   protected void disp(){
+      System.out.println("Child class method");
+   }
+   public static void main( String args[]) {
+      MyChildClass obj = new MyChildClass();
+      obj.disp();
+   }
+}
+Output:
+
+Exception in thread "main" java.lang.Error: Unresolved compilation 
+problem: Cannot reduce the visibility of the inherited method from MyBaseClass
+```
+This is <strong>not allowed </strong>as child class disp method is more restrictive(protected) than base class(public)
+```
+class MyBaseClass{
+   protected void disp()
+   {
+       System.out.println("Parent class method");
+   }
+}
+class MyChildClass extends MyBaseClass{
+   public void disp(){
+      System.out.println("Child class method");
+   }
+   public static void main( String args[]) {
+      MyChildClass obj = new MyChildClass();
+      obj.disp();
+   }
+}
+Output:
+
+Child class method
+```
+However this is <strong>perfectly valid scenario</strong> as public is less restrictive than protected. Same access modifier is also a valid one.
 * Private, static and final methods cannot be overridden as they are local to the class. However static methods can be re-declared in the sub class, in this case the sub-class method would act differently and will have nothing to do with the same static method of parent class.<br>
 <a href="https://www.toolsqa.com/selenium-webdriver/retry-failed-tests-testng/">Retrying a failed test case</a> in TestNG is example for Method Overriding.
 ##### Examples of Method Overriding
