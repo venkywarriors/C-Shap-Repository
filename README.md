@@ -45,7 +45,8 @@ We extend the Base Class in other classes such as Tests and Utility Class. Exten
 * Number of parameters.   add(int, int) or add(int, int, int)
 * Data type of parameters.  add(int, int) or add(int, float)
 * Sequence of Data type of parameters. add(int, float) or add(float, int)
-* Invalid case of method overloading  int add(int, int) or float add(int, int)
+* Invalid case of method overloading  
+if two methods have same name, same parameters and have different return type ex: int add(int, int) or float add(int, int)
 #### METHOD OVERLOADING
 We use implicit wait in Selenium. Implicit wait is an example of overloading. In Implicit wait we use different time stamps such as SECONDS, MINUTES, HOURS etc.,
 <br>
