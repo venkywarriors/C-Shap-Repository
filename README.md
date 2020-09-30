@@ -48,6 +48,7 @@ Some more examples of Method Overloading in Selenium are present in methods of A
 #### METHOD OVERRIDING
 We use a method which was already implemented in another class by changing its parameters. To.browser capabilities selenium understand this you need to understand Overriding in Java.<br>
 Declaring a method in child class which is already present in the parent class is called Method Overriding. Examples are get and navigate methods of different drivers in Selenium<br>
+<a href="https://www.toolsqa.com/selenium-webdriver/retry-failed-tests-testng/">Retrying a failed test case</a> in TestNG is example for Method Overriding.
 ##### Examples of Method Overriding
 In the WebDriver interface, we use two different methods for navigating or accessing any website i.e. driver.get() and driver.navigate().to().
 <br>These two methods are examples of Method Overriding.<br>
