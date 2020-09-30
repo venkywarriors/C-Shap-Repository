@@ -39,6 +39,13 @@ We create a Base Class in the Framework to initialize WebDriver interface, WebDr
 <br>
 We extend the Base Class in other classes such as Tests and Utility Class. Extending one class into other class is known as Inheritance.We use Multi  level inheritznce
 ### POLYMORPHISM
+1. Method Overloading in Java – This is an example of compile time (or static polymorphism)(or early binding)<br>
+2. Method Overriding in Java – This is an example of runtime time (or dynamic polymorphism)(or late binding)<br> 
+<strong>Three ways to overload a method</strong>
+* Number of parameters.   add(int, int) or add(int, int, int)
+* Data type of parameters.  add(int, int) or add(int, float)
+* Sequence of Data type of parameters. add(int, float) or add(float, int)
+* Invalid case of method overloading  int add(int, int) or float add(int, int)
 #### METHOD OVERLOADING
 We use implicit wait in Selenium. Implicit wait is an example of overloading. In Implicit wait we use different time stamps such as SECONDS, MINUTES, HOURS etc.,
 <br>
