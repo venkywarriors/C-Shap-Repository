@@ -54,12 +54,15 @@ A class having multiple methods with same name but different parameters is calle
 <br>
 Some more examples of Method Overloading in Selenium are present in methods of Actions Class and Assert class in TestNG as shown below:
 #### METHOD OVERRIDING
-We use a method which was already implemented in another class by changing its parameters. To.browser capabilities selenium understand this you need to understand Overriding in Java.<br>
+Browser capabilities selenium understand this you need to understand Overriding in Java.<br>
 Declaring a method in child class which is already present in the parent class is called Method Overriding. Examples are get and navigate methods of different drivers in Selenium<br>
+<strong>Rules of method overriding</strong>
+* Argument list: The argument list of overriding method (method of child class) must match the Overridden method(the method of parent class). The data types of the arguments and their sequence should exactly match.
+* Access Modifier of the overriding method (method of subclass) cannot be more restrictive than the overridden method of parent class. For e.g. if the Access Modifier of parent class method is public then the overriding method (child class method ) cannot have private, protected and default Access modifier,because all of these three access modifiers are more restrictive than public.
+* Private, static and final methods cannot be overridden as they are local to the class. However static methods can be re-declared in the sub class, in this case the sub-class method would act differently and will have nothing to do with the same static method of parent class.<br>
 <a href="https://www.toolsqa.com/selenium-webdriver/retry-failed-tests-testng/">Retrying a failed test case</a> in TestNG is example for Method Overriding.
 ##### Examples of Method Overriding
-In the WebDriver interface, we use two different methods for navigating or accessing any website i.e. driver.get() and driver.navigate().to().
-<br>These two methods are examples of Method Overriding.<br>
+In the WebDriver interface, we use two different methods for navigating or accessing any website i.e. <strong>driver.get() and driver.navigate().to(). these two methods are examples of Method Overriding.</strong><br>
 <strong>Enlisted below is the basic difference between the navigate() and get() method and this is frequently asked in Selenium Interviews.<br></strong>
 * The get() method does not load the web page completely if you are going to do some other operation after loading a page. This is the reason for which get() is faster than navigate().
 * Using get() method, you can not traverse back and forward whereas Navigate() supports back and forth traversal of a web page using navigate().forward() and navigate().back().
