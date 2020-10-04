@@ -99,7 +99,61 @@ Suppose that in the present, the programmer wrote:
 IDictionary<string> dictionary = new Dictionary<string>();
 ```
 And now dictionary invokes the methods and properties of Dictionary<string>.
- ## SortedDictionary<TKey,TValue> Class<br>
+### Sorting a Dictionary in place with respect to keys
+<a href="https://www.dotnetperls.com/sort-dictionary">C# Sort Dictionary: Keys and Values</a>
+```
+class Person
+{
+    public Person(string firstname, string lastname)
+    {
+        FirstName = firstname;
+        LastName = lastname;
+    }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+
+static void Main(string[] args)
+{
+    Dictionary<Person, int> People = new Dictionary<Person, int>();
+
+    People.Add(new Person("John", "Doe"), 1);
+    People.Add(new Person("Mary", "Poe"), 2);
+    People.Add(new Person("Richard", "Roe"), 3);
+    People.Add(new Person("Anne", "Roe"), 4);
+    People.Add(new Person("Mark", "Moe"), 5);
+    People.Add(new Person("Larry", "Loe"), 6);
+    People.Add(new Person("Jane", "Doe"), 7);
+
+    foreach (KeyValuePair<Person, int> person in People.OrderBy(i => i.Key.LastName))
+    {
+        Debug.WriteLine(person.Key.LastName + ", " + person.Key.FirstName + " - Id: " + person.Value.ToString());
+    }
+}
+Output:
+
+Doe, John - Id: 1
+Doe, Jane - Id: 7
+Loe, Larry - Id: 6
+Moe, Mark - Id: 5
+Poe, Mary - Id: 2
+Roe, Richard - Id: 3
+Roe, Anne - Id: 4
+In this example it would make sense to also use ThenBy for first names:
+
+foreach (KeyValuePair<Person, int> person in People.OrderBy(i => i.Key.LastName).ThenBy(i => i.Key.FirstName))
+Then the output is:
+
+Doe, Jane - Id: 7
+Doe, John - Id: 1
+Loe, Larry - Id: 6
+Moe, Mark - Id: 5
+Poe, Mary - Id: 2
+Roe, Anne - Id: 4
+Roe, Richard - Id: 3
+LINQ also has the OrderByDescending and ThenByDescending for those that need it.
+```
+## SortedDictionary<TKey,TValue> Class<br>
 Namespace:System.Collections.Generic<br>
 Assembly:System.Collections.dll<br>
 Represents a collection of key/value pairs that are sorted on the key.<br>
