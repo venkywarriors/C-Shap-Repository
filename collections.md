@@ -142,6 +142,7 @@ Roe, Anne - Id: 4
 In this example it would make sense to also use ThenBy for first names:
 
 foreach (KeyValuePair<Person, int> person in People.OrderBy(i => i.Key.LastName).ThenBy(i => i.Key.FirstName))
+//var sorted = dict.OrderByDescending(x => x.Value).ThenBy(x => x.Key);
 Then the output is:
 
 Doe, Jane - Id: 7
