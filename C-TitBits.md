@@ -1,5 +1,9 @@
 ### Difference between Ref and Out keywords in C#
 <a href="https://www.google.com/amp/s/www.geeksforgeeks.org/difference-between-ref-and-out-keywords-in-c-sharp/amp/">Ref and Out</a>
+### Var Keyword In C#
+<a href="https://www.c-sharpcorner.com/UploadFile/5ef30d/var-keyword-in-C-Sharp-programming/">Var keyword</a>
+https://www.geeksforgeeks.org/difference-between-var-and-dynamic-in-c-sharp/amp/
+
 ### :dart:How can I find the version of .NET run-time programmatically?
 ```
 Running:
