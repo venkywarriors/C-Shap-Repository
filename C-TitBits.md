@@ -6,6 +6,7 @@
 <a href="http://www.dotnetstudy.com/difference-var-vs-dynamic-vs-object-in-csharp?id=29">Var vs dynamic vs object keyword</a><br>
 ### :dart:C# Method Overriding
 Method Overriding in C# is similar to the virtual function in C++. Method Overriding is a technique that allows the invoking of functions from another class (base class) in the derived class. Creating a method in the derived class with the same signature as a method in the base class is called as method overriding.
+<a href="https://www.geeksforgeeks.org/c-sharp-method-overriding/amp/">Overriding</a><br>
 ```
 using System;  
 public class Animal{  
