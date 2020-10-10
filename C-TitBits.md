@@ -4,7 +4,33 @@
 <a href="https://www.c-sharpcorner.com/UploadFile/5ef30d/var-keyword-in-C-Sharp-programming/">Var keyword</a><br>
 <a href="https://www.geeksforgeeks.org/difference-between-var-and-dynamic-in-c-sharp/amp/">Var vs dynamic keyword</a><br>
 <a href="http://www.dotnetstudy.com/difference-var-vs-dynamic-vs-object-in-csharp?id=29">Var vs dynamic vs object keyword</a><br>
-
+### :dart:C# Method Overriding
+Method Overriding in C# is similar to the virtual function in C++. Method Overriding is a technique that allows the invoking of functions from another class (base class) in the derived class. Creating a method in the derived class with the same signature as a method in the base class is called as method overriding.
+```
+using System;  
+public class Animal{  
+    public virtual void eat(){  
+        Console.WriteLine("Eating...");  
+    }  
+}  
+public class Dog: Animal  
+{  
+    public override void eat()  
+    {  
+        Console.WriteLine("Eating bread...");  
+    }  
+}  
+public class TestOverriding  
+{  
+    public static void Main()  
+    {  
+        Dog d = new Dog();  
+        d.eat();  
+    }  
+}  
+Output:
+Eating bread...
+```
 ### :dart:How can I find the version of .NET run-time programmatically?
 ```
 Running:
