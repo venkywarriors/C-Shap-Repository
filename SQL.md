@@ -15,17 +15,15 @@ from abcTable
 where abcTable_ID in (select null)
 ```
 IN:
-
-Works on List result set
-Doesn’t work on subqueries resulting in Virtual tables with multiple columns
-Compares every value in the result list
-Performance is comparatively SLOW for larger result set of subquery
-EXISTS:
-
-Works on Virtual tables
-Is used with co-related queries
-Exits comparison when match is found
-Performance is comparatively FAST for larger result set of subquery
+* Works on List result set
+* Doesn’t work on subqueries resulting in Virtual tables with multiple columns
+* Compares every value in the result list
+*:Performance is comparatively SLOW for larger result set of subquery
+<br>EXISTS:
+* Works on Virtual tables
+* Is used with co-related queries
+* Exits comparison when match is found
+* Performance is comparatively FAST for larger result set of subquery
 ### What is Cross Join in SQL?
 The SQL CROSS JOIN produces a result set which is the number of rows in the first table multiplied by the number of rows in the second table if no WHERE clause is used along with CROSS JOIN.This kind of result is called as Cartesian Product.
 <br>
