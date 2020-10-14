@@ -62,3 +62,47 @@ CASE
     ELSE result
 END;
 ```
+### Second Highest Salary in MySQL
+```
+SELECT name, MAX(salary) AS salary
+  FROM employee
+ WHERE salary < (SELECT MAX(salary)
+                 FROM employee); 
+```
+```
+SELECT salary 
+FROM employee 
+ORDER BY salary desc limit n-1,1
+```
+```
+SELECT
+    TOP 1 salary
+FROM
+    (
+        SELECT
+            TOP 2 salary
+        FROM
+            employees
+    ) sal
+ORDER BY
+    salary DESC;
+```
+```
+select * from emp 
+where sal=(select min(sal) from 
+(select sal from(select distinct sal from emp order by sal desc)
+where rownum<=n));
+n can be the value you want to see......
+
+select max(Emp_Sal) 
+from Employee a
+where 1 = ( select count(*) 
+         from Employee b
+         where b.Emp_Sal > a.Emp_Sal)
+
+select max(Emp_Sal) 
+from Employee a
+where 1 = ( select count(*) 
+         from Employee b
+         where b.Emp_Sal > a.Emp_Sal)
+```
