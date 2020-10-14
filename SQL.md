@@ -165,3 +165,10 @@ WHERE
             T1.column_name = T2.column_name
     );
 ```
+### Backup table in SQL
+```
+Create table Backup_Table as select * from Table_To_be_Backup where 1 = 2;
+
+SELECT * INTO  [dbo].[tbl_NewTable] 
+FROM [dbo].[tbl_OldTable]
+```
