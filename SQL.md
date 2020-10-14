@@ -107,3 +107,28 @@ where 1 = ( select count(*)
          from Employee b
          where b.Emp_Sal > a.Emp_Sal)
 ```
+### Finding duplicate values in a SQL table
+```
+SELECT username, email, COUNT(*)
+FROM users
+GROUP BY username, email
+HAVING COUNT(*) > 1
+```
+```
+Solution 1:
+SELECT *,
+       COUNT(*)
+FROM users t1
+INNER JOIN users t2
+WHERE t1.id > t2.id
+  AND t1.name = t2.name
+  AND t1.email=t2.email
+
+Solution 2:
+SELECT *,
+       COUNT(*)
+FROM users
+GROUP BY name,
+         email
+HAVING COUNT(*) > 1
+```
