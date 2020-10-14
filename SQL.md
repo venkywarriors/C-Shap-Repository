@@ -13,6 +13,7 @@ FROM table1 T1, table1 T2
 WHERE condition;
 ```
 ### Compare differences between two tables in mysql
+<br><a href="https://dba.stackexchange.com/questions/214365/how-to-show-difference-between-two-tables">How to show difference between two tables?</a><br>
 ```
 SELECT tbl, ID, col
 FROM
