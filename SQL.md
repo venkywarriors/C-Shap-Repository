@@ -174,6 +174,11 @@ FROM [dbo].[tbl_OldTable]
 ```
 ### Export table from sql server to text file
 ```
+SELECT *
+FROM [AdventureWorks].[Person].[AddressType] 
+INTO OUTFILE 'C:/filename.csv'
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n';
 ```
 ```
 ```
