@@ -132,3 +132,23 @@ GROUP BY name,
          email
 HAVING COUNT(*) > 1
 ```
+### How can I remove duplicate rows?
+```
+DELETE 
+FROM MyTable
+WHERE NOT EXISTS (
+              SELECT min(RowID)
+              FROM Mytable
+              WHERE (SELECT RowID 
+                     FROM Mytable
+                     GROUP BY Col1, Col2, Col3
+                     ))
+               );
+
+DELETE A
+FROM   TABLE A,
+       TABLE B
+WHERE  A.COL1 = B.COL1
+       AND A.COL2 = B.COL2
+       AND A.UNIQUEFIELD > B.UNIQUEFIELD
+```
