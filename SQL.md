@@ -180,5 +180,33 @@ INTO OUTFILE 'C:/filename.csv'
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
 ```
+### import data from .txt file to populate a table in SQL Server
+#### Using OPENROWSET
+You can read text files using OPENROWSET option (first you have to enable adhoc queries)
 ```
+Using Microsoft Text Driver
+SELECT * FROM OPENROWSET('MSDASQL',
+'Driver={Microsoft Text Driver (*.txt; *.csv)};
+DefaultDir=C:\Docs\csv\;',
+'SELECT * FROM PPE.txt')
+```
+#### Using OLEDB provider
+```
+SELECT 
+    * 
+FROM 
+OPENROWSET
+        ('Microsoft.ACE.OLEDB.12.0','Text;Database=C:\Docs\csv\;IMEX=1;','SELECT * 
+FROM PPE.txt') t
+```
+#### Using BULK INSERT
+You can import text file data to a staging table and update data from it:
+```
+BULK INSERT dbo.StagingTable
+FROM 'C:\PPE.txt'
+WITH 
+  (
+    FIELDTERMINATOR = ';', 
+    ROWTERMINATOR = '\n' 
+  )
 ```
