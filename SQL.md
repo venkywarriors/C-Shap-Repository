@@ -172,3 +172,8 @@ Create table Backup_Table as select * from Table_To_be_Backup where 1 = 2;
 SELECT * INTO  [dbo].[tbl_NewTable] 
 FROM [dbo].[tbl_OldTable]
 ```
+### Export table from sql server to text file
+```
+```
+```
+```
