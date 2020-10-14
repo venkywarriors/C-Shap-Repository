@@ -151,4 +151,17 @@ FROM   TABLE A,
 WHERE  A.COL1 = B.COL1
        AND A.COL2 = B.COL2
        AND A.UNIQUEFIELD > B.UNIQUEFIELD
+
+DELETE
+FROM
+    table_name T1
+WHERE
+    rowid > (
+        SELECT
+            min(rowid)
+        FROM
+            table_name T2
+        WHERE
+            T1.column_name = T2.column_name
+    );
 ```
