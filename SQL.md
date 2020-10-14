@@ -7,8 +7,7 @@ If WHERE clause is used with CROSS JOIN, it functions like an INNER JOIN
 <a href="https://www.essentialsql.com/cross-join-introduction/">Cross Join</a>
 ### SQL Self JOIN
 A self JOIN is a regular join, but the table is joined with itself.
-<br><a href="https://www.w3resource.com/sql/joins/perform-a-self-join.php">Self Join</a><br>
-Self JOIN Syntax
+<br><a href="https://www.w3resource.com/sql/joins/perform-a-self-join.php">Self JOIN Syntax</a><br>
 ```
 SELECT column_name(s)
 FROM table1 T1, table1 T2
