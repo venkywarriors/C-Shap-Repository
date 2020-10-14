@@ -1,5 +1,31 @@
 <a href="https://www.w3schools.com/sql/sql_isnull.asp">SQL NULL Functions</a><br>
 <a href="https://blog.sqlauthority.com/2008/08/06/sql-server-query-to-find-column-from-all-tables-of-database/amp/">Query to Find Column From All Tables of Database</a><br>
+### Difference between EXISTS and IN in SQL?
+<a href="https://intellipaat.com/community/3903/difference-between-exists-and-in-in-sql">Exists vs In</a><br>
+Difference lies here:
+```
+select * 
+from abcTable
+where exists (select null) 
+```
+Above query will return all the records while below one would return empty.
+```
+select *
+from abcTable
+where abcTable_ID in (select null)
+```
+IN:
+
+Works on List result set
+Doesn’t work on subqueries resulting in Virtual tables with multiple columns
+Compares every value in the result list
+Performance is comparatively SLOW for larger result set of subquery
+EXISTS:
+
+Works on Virtual tables
+Is used with co-related queries
+Exits comparison when match is found
+Performance is comparatively FAST for larger result set of subquery
 ### What is Cross Join in SQL?
 The SQL CROSS JOIN produces a result set which is the number of rows in the first table multiplied by the number of rows in the second table if no WHERE clause is used along with CROSS JOIN.This kind of result is called as Cartesian Product.
 <br>
