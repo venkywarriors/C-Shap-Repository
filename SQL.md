@@ -49,3 +49,16 @@ select t1.user_id,t2.user_id
  and t1.last_name=t2.last_name
 //This will compare your table and find all matching pairs, if any mismatch return NULL on left.
 ```
+### The SQL CASE Statement
+The CASE statement goes through conditions and returns a value when the first condition is met (like an IF-THEN-ELSE statement). So, once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the ELSE clause.
+<br>
+If there is no ELSE part and no conditions are true, it returns NULL.<br>
+<a href="https://www.sqlshack.com/case-statement-in-sql/">CASE Syntax</a><br>
+```
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+```
