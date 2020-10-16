@@ -1,3 +1,4 @@
+<a href="https://intellipaat.com/community/1505/what-is-the-difference-between-union-and-union-all">UNION vs UNION ALL</a><br>
 <a href="https://www.techonthenet.com/sql_server/except.php">EXCEPT Operator</a><br>
 <a href="https://www.geeksforgeeks.org/sql-minus-operator/">MINUS operator</a><br>
 <a href="https://www.geeksforgeeks.org/sql-intersect-clause/amp/">INTERSECT Clause</a><br>
