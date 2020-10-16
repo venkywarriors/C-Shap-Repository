@@ -1,3 +1,4 @@
+<a href="https://www.geeksforgeeks.org/sql-minus-operator/">MINUS Operator</a><br>
 <a href="https://www.geeksforgeeks.org/sql-intersect-clause/amp/">INTERSECT Clause</a><br>
 <a href="https://www.w3schools.com/sql/sql_isnull.asp">SQL NULL Functions</a><br>
 <a href="https://blog.sqlauthority.com/2008/08/06/sql-server-query-to-find-column-from-all-tables-of-database/amp/">Query to Find Column From All Tables of Database</a><br>
