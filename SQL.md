@@ -43,6 +43,10 @@ SELECT column_name(s)
 FROM table1 T1, table1 T2
 WHERE condition;
 ```
+### What is the difference between TRUNCATE, DELETE and DROP statements?
+<strong>TRUNCATE</strong>
+It is used to remove all the records from a table. It deletes all the records from an existing table but not the table itself. The structure or schema of the table is preserved.
+* TRUNCATE Command is a Data Definition Language operation. 
 ### Compare differences between two tables in mysql
 <a href="https://dba.stackexchange.com/questions/214365/how-to-show-difference-between-two-tables">How to show difference between two tables?</a><br>
 ```
