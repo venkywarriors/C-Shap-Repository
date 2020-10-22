@@ -78,6 +78,15 @@ Used to delete existing database objects. It can be used to delete databases, ta
 <br>
 A DROP statement in SQL removes a component from a relational database management system (RDBMS).
 * DROP statement is a Data Definition Language(DDL) Command
+* DROP is a DDL Command. Objects deleted using DROP are permanently lost and it cannot be rolled back.
+* DROP command deletes the data of the table as well as removes the entire schema/structure of the table from the database.
+```
+DROP TABLE Employees;
+This query will remove the whole table Employees from the database.
+
+DROP DATABASE Company;
+This query will delete the database Company.
+```
 ### Compare differences between two tables in mysql
 <a href="https://dba.stackexchange.com/questions/214365/how-to-show-difference-between-two-tables">How to show difference between two tables?</a><br>
 ```
