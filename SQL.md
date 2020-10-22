@@ -47,6 +47,16 @@ WHERE condition;
 <strong>TRUNCATE</strong>
 It is used to remove all the records from a table. It deletes all the records from an existing table but not the table itself. The structure or schema of the table is preserved.
 * TRUNCATE Command is a Data Definition Language operation. 
+* We cannot use the WHERE clause with TRUNCATE.
+* TRUNCATE is faster than DELETE.
+* TRUNCATE TABLE statement is a DDL command so it can not be rolled back.
+```
+TRUNCATE TABLE Employees;
+This query will remove all the records from the table Employees.
+
+TRUNCATE TABLE Company.Employees;
+This query will remove all the records from the table Employees in the database Company.
+```
 ### Compare differences between two tables in mysql
 <a href="https://dba.stackexchange.com/questions/214365/how-to-show-difference-between-two-tables">How to show difference between two tables?</a><br>
 ```
