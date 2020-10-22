@@ -19,12 +19,12 @@ select *
 from abcTable
 where abcTable_ID in (select null)
 ```
-IN:
+<strong>IN:</strong>
 * Works on List result set
 * Doesn’t work on subqueries resulting in Virtual tables with multiple columns
 * Compares every value in the result list
-*:Performance is comparatively SLOW for larger result set of subquery
-<br>EXISTS:
+* Performance is comparatively SLOW for larger result set of subquery<br>
+<strong>EXISTS:</strong>
 * Works on Virtual tables
 * Is used with co-related queries
 * Exits comparison when match is found
