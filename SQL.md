@@ -57,6 +57,27 @@ This query will remove all the records from the table Employees.
 TRUNCATE TABLE Company.Employees;
 This query will remove all the records from the table Employees in the database Company.
 ```
+<strong>DELETE</strong>
+It is used to delete existing records from an existing table. We can delete a single record or multiple records depending on the condition specified in the query.
+* The DELETE statement in SQL is a Data Manipulation Language(DML) Command.
+* DELETE is a DML Command so it can be rolled back
+* We can use where clause with DELETE to filter & delete specific records.
+* Thus it is slower as compared to TRUNCATE command
+```
+DELETE FROM Employees WHERE Emp_Id = 7;
+This query will delete the record(s) from Employees table where field Emp_Id has a value 7.
+
+DELETE FROM Employees WHERE Emp_Id = 10 && Emp_Name = "John Doe";
+This query will delete the record(s) of the Employee from Employees table whose Emp_Id is 7 and Emp_Name is John Doe.
+
+DELETE FROM Employees;
+This query will delete all the records from Employees table as WHERE clause and conditions are not specified.
+```
+<strong>DROP</strong>
+Used to delete existing database objects. It can be used to delete databases, tables, views, triggers, etc.
+<br>
+A DROP statement in SQL removes a component from a relational database management system (RDBMS).
+* DROP statement is a Data Definition Language(DDL) Command
 ### Compare differences between two tables in mysql
 <a href="https://dba.stackexchange.com/questions/214365/how-to-show-difference-between-two-tables">How to show difference between two tables?</a><br>
 ```
