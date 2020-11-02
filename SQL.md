@@ -174,11 +174,6 @@ where 1 = ( select count(*)
          from Employee b
          where b.Emp_Sal > a.Emp_Sal)
 
-select max(Emp_Sal) 
-from Employee a
-where 1 = ( select count(*) 
-         from Employee b
-         where b.Emp_Sal > a.Emp_Sal)
 ```
 ### Finding duplicate values in a SQL table
 ```
