@@ -31,7 +31,7 @@ while the second method switches the control to the parent frame of the current 
 In Page Object Model design pattern, we write locators (such as id, name, xpath etc.,) in a Page Class. We utilize these locators in tests but we can’t see these locators in the tests. Literally we hide the locators from the tests.
 <br>
 Abstraction is the methodology of hiding the implementation of internal details and showing the functionality to the users.
-### INTERFACE
+### <a href="https://dotnettutorials.net/lesson/multiple-inheritance-csharp/">INTERFACE</a>
 WebDriver itself is an Interface. So based on the above statement WebDriver driver = new FirefoxDriver(); WebDriver driver = new ChromeDriver(); we are initializing Firefox browser using Selenium WebDriver. <br>It means we are creating a reference variable (driver) of the interface (WebDriver) and creating an Object. Here WebDriver is an Interface as mentioned earlier and FirefoxDriver is a class.
 <br>
 An interface in Java looks similar to a class but both the interface and class are two different concepts.<br> An interface can have methods and variables just like the class but the methods declared in interface are by default abstract. We can achieve 100% abstraction and multiple inheritance in Java with Interface.
