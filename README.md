@@ -256,7 +256,7 @@ public string ReadDataFromMainframeConsole(int x, int y, int length)
 {
 try
 {
-IIb Screen screen - GetScreenObject();
+IIbmScreen screen - GetScreenObject();
 string value = screen. GetText(x, y, length);
 return !string.IsNullOrEmpty(value) ? value : null;
 }
@@ -264,5 +264,31 @@ catch (Exception ex)
 {
 throw ex;
 }
+}
+
+public IIbmScreen GetScreenObject()
+{
+IIbmScreen screen = null;
+reflection pplication = MyReflection.ActiveApplication;
+if (reflectionApplication != null)
+object[] terminals = reflectionApplication.GetControlsByFilePath(sessionPath);
+if (terminals != null & terminals.Length > 0)
+{
+IIbmTerminal terminal = (IIbm Terminal)terminals[0];
+screen = terminal.Screen;
+}
+}
+return screen;
+}
+
+public bool ValidateApollo()
+{
+bool isApolloOpened = false;
+IIbmScreen screen = GetScreenObject();
+if (screen.Get Text(7, 35, 6).Equals("APOLLO")))
+{
+isApolloOpened = true;
+}
+return isApolloOpened;
 }
 ```
