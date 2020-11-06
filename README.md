@@ -322,4 +322,41 @@ IIbmScreen screen = GetScreenObject();
 screen. SetSelection StartPos(x, y);
 }
 
+public string GetMainframeScreenName()
+{
+IIbmScreen screen = GetScreenObject();
+return screen. GetText(1, 73, 7);
+}
+
+
+public void GetCursorPos(out int x, out int y)
+{
+IIbmScreen screen - GetScreenObject();
+X = screen.Cursor Row;
+y = screen.CursorColumn;
+}
+
+public string GetText(int startpos, int endpos, int length)
+{
+IIbmScreen screen = GetScreenObject();
+return screen.GetText(startpos, endpos, length);
+}
+
+public void Update MainFrameConsole(int x, int y, string value)
+{
+IIbmScreen screen = GetScreenObject();
+screen.Put Text(value, x, y);
+}
+
+public void sendF8()
+{
+IIbmScreen screen = GetScreenObject();
+screen.SendControlkeySync (ControlKeyCode.F8);
+}
+
+public void sendF2()
+{
+IIbmScreen screen = GetScreenObject();
+screen.SendControlkeySync (ControlKeyCode.F2);
+}
 ```
