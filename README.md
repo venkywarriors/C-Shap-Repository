@@ -359,4 +359,28 @@ public void sendF2()
 IIbmScreen screen = GetScreenObject();
 screen.SendControlkeySync (ControlKeyCode.F2);
 }
+
+public void sendEnter()
+{
+IIbmScreen screen = GetScreenObject();
+screen.SendControlkeySync (ControlKeyCode.Transmit);
+}
+
+public void sendHome()
+{
+IIbmScreen screen = GetScreenObject();
+screen.SendControlkeySync (ControlKeyCode.Home);
+}
+
+public void sendTab()
+{
+IIbmScreen screen = GetScreenObject();
+screen.SendControlkeySync (ControlKeyCode.Tab);
+}
+
+public void WaitforHosttoSettle()
+{
+IIbmScreen screen =GetScreenObject();
+screen. WaitForHostSettle(3000, 1000);
+}
 ```
