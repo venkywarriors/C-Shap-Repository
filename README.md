@@ -256,8 +256,8 @@ public string ReadDataFromMainframeConsole(int x, int y, int length)
 {
 try
 {
-IIbmScreen screen - GetScreenObject();
-string value = screen. GetText(x, y, length);
+IIbmScreen screen = GetScreenObject();
+string value = screen.GetText(x, y, length);
 return !string.IsNullOrEmpty(value) ? value : null;
 }
 catch (Exception ex)
@@ -319,13 +319,13 @@ return reflectionApplication != null ? true : false;
 public void SetCursorPosition(int x, int y) 
 {
 IIbmScreen screen = GetScreenObject();
-screen. SetSelection StartPos(x, y);
+screen.SetSelection StartPos(x, y);
 }
 
 public string GetMainframeScreenName()
 {
 IIbmScreen screen = GetScreenObject();
-return screen. GetText(1, 73, 7);
+return screen.GetText(1, 73, 7);
 }
 
 
@@ -345,42 +345,44 @@ return screen.GetText(startpos, endpos, length);
 public void Update MainFrameConsole(int x, int y, string value)
 {
 IIbmScreen screen = GetScreenObject();
-screen.Put Text(value, x, y);
+screen.PutText(value, x, y);
 }
 
 public void sendF8()
 {
 IIbmScreen screen = GetScreenObject();
-screen.SendControlkeySync (ControlKeyCode.F8);
+screen.SendControlkeySync(ControlKeyCode.F8);
 }
 
 public void sendF2()
 {
 IIbmScreen screen = GetScreenObject();
-screen.SendControlkeySync (ControlKeyCode.F2);
+screen.SendControlkeySync(ControlKeyCode.F2);
 }
 
 public void sendEnter()
 {
 IIbmScreen screen = GetScreenObject();
-screen.SendControlkeySync (ControlKeyCode.Transmit);
+screen.SendControlkeySync(ControlKeyCode.Transmit);
 }
 
 public void sendHome()
 {
 IIbmScreen screen = GetScreenObject();
-screen.SendControlkeySync (ControlKeyCode.Home);
+screen.SendControlkeySync(ControlKeyCode.Home);
 }
 
 public void sendTab()
 {
 IIbmScreen screen = GetScreenObject();
-screen.SendControlkeySync (ControlKeyCode.Tab);
+screen.SendControlkeySync(ControlKeyCode.Tab);
 }
 
 public void WaitforHosttoSettle()
 {
 IIbmScreen screen =GetScreenObject();
 screen. WaitForHostSettle(3000, 1000);
+}
+}
 }
 ```
