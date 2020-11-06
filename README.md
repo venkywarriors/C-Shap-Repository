@@ -234,3 +234,35 @@ DesiredCapabilities dc = DesiredCapabilities.Chrome();
 dc.SetCapability(ChromeOptions.Capability, options);
 IWebDriver driver = new RemoteWebDriver(dc);
 ```
+### Automate Attachmate IBM Reflection 2014 Terminal
+```
+using System;
+using System.Configuration;
+using Attachmate. Reflection Framework;
+using Attachmate. Reflection. Emulation. IbmHosts;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SIG_TRS_FEED_AUTOMATION
+
+class MainframeLayer
+{
+public Application reflectionApplication = null;
+string sessionPath = Environment.GetEnvironmentVariable("USERPROFILE") + Configuration Manager.AppSettings.Get("screenPath");
+
+public string ReadDataFromMainframeConsole(int x, int y, int length)
+{
+try
+{
+IIb Screen screen - GetScreenObject();
+string value = screen. GetText(x, y, length);
+return !string.IsNullOrEmpty(value) ? value : null;
+}
+catch (Exception ex)
+{
+throw ex;
+}
+}
+```
