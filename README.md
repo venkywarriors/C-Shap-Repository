@@ -234,12 +234,13 @@ DesiredCapabilities dc = DesiredCapabilities.Chrome();
 dc.SetCapability(ChromeOptions.Capability, options);
 IWebDriver driver = new RemoteWebDriver(dc);
 ```
-### Automate Attachmate IBM Reflection 2014 Terminal
+### <a href="https://docs.attachmate.com/reflection/16-2/net-prog-guide/.IbmHosts~Attachmate.Reflection.Emulation.IbmHosts.IIbmScreen_members.html">Automate Attachmate IBM Reflection 2014 Terminal</a><br>
+<a href="https://social.microsoft.com/Forums/en-US/8f57be0e-7a80-447a-a4e6-b0609406be4d/assembly-loadfrom-context-error-ps-2-net-35?forum=Offtopic">Attachmate Reflection Emulation</a>
 ```
-using System;
+using System;Attachmate.Reflection.Emulation
 using System.Configuration;
 using Attachmate. Reflection Framework;
-using Attachmate. Reflection. Emulation. IbmHosts;
+using Attachmate. Reflection. Emulation. IbmHosts;Automate Attachmate IBM Reflection 2014 Terminal
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
