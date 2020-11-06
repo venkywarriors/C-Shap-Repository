@@ -291,4 +291,35 @@ isApolloOpened = true;
 }
 return isApolloOpened;
 }
+
+public bool ValidateMainFrameScreen(string screen_Name)
+{
+bool isMatched = false;
+try
+{
+IIbmScreen screen = GetScreenObject();
+if (screen.GetText(1, 73, 7).Equals(screen_Name))
+{
+isMatched = true;
+}
+}
+catch (Exception ex)
+{
+throw (ex);
+}
+return isMatched;
+}
+
+public bool CheckMainframeIsOpened()
+{
+reflectionApplication = MyReflection. ActiveApplication;
+return reflectionApplication != null ? true : false;
+}
+
+public void SetCursorPosition(int x, int y) 
+{
+IIbmScreen screen = GetScreenObject();
+screen. SetSelection StartPos(x, y);
+}
+
 ```
