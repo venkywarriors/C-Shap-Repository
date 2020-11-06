@@ -246,7 +246,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SIG_TRS_FEED_AUTOMATION
-
+{
 class MainframeLayer
 {
 public Application reflectionApplication = null;
