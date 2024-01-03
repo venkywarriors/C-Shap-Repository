@@ -1,4 +1,70 @@
 [Basic Nunit Program](https://github.com/venkywarriors/C-Shap-Repository/blob/master/nunit.pdf)<br>
+# Testing Framework Comparison
+
+| Feature | NUnit | MSTest | xUnit |
+| --- | --- | --- | --- |
+| **Test Class Attribute** | `[TestFixture]` | `[TestClass]` | `[TestClass]` |
+| **Test Method Attribute** | `[Test]` | `[TestMethod]` | `[Fact]` |
+| **Test Initialization** | `[SetUp]` | `[TestInitialize]` | Constructor or `[ClassFixture]` |
+| **Test Cleanup** | `[TearDown]` | `[TestCleanup]` | Destructor or `[ClassFixture]` |
+| **Class Initialization** | `[TestFixtureSetUp]` | `[ClassInitialize]` | N/A |
+| **Class Cleanup** | `[TestFixtureTearDown]` | `[ClassCleanup]` | N/A |
+| **One-Time Initialization for All Tests in One Class** | `[OneTimeSetUp]` `[OneTimeTearDown]` | `[MemberData]` Or `[ClassData]` `[MethodMember]` or `[PropertyMember]` | `[ClassInitialize]` `[ClassCleanup]` |
+| **One-Time Initialization for All Tests in One Assembly** | Dedicated class with `[SetUpFixture]` + `[OneTimeSetUp]` `[OneTimeTearDown]` | `[MemberData]` Or `[ClassData]`,`[PropertyMember]` | `[TestClass]` + `[AssemblyInitialize]` `[AssemblyCleanup]` |
+| **Skipping a Test** | `[Fact (Skip="reason")]` | `[Ignore("reason")]` | `[Ignore]` |
+| **Timeout Value for Test Cases in Execution** | `[TimeOut]` | `[Timeout(5000)]` | `Timeout(1000)` |
+| **Re-runs the Test Cases** | `[Retry]` | Install the `MSTest.TestFramework` NuGet package: `[RetryTest(3)]` | Install the `Xunit.Retry` NuGet package: `[RetryFact(MaxRetries = 3)]` |
+| **Marks the Method as a Test and Passes Inline Parameters for Parameterized Tests** | `[TestCase]` | `[TestMethod]` `[DataRow(1, 2, 3)]` | `[Theory]` `[InlineData(1, 2, 3)]` |
+| **Random Value for Parameterized Tests** | `[Random]` | | |
+| **Marks a Test Method Expected to Throw a Particular Exception Type** | `[ExpectedException(ExceptionType)]` | `[ExpectedException(typeof(MyCustomException), "ExpectedMessage")]` | Use `Assert.Throws<T>` |
+| **Set Priority** | `[Test, Order(1)]` | Create a custom attribute (TestPriority in this example): `[Fact, TestPriority(1)]` | `IClassFixture` interface and the `IUseFixture` interface |
+| **Categorize Test Cases or Classes** | `[Category()]` | `[TestCategory("")]` | `[Trait("Category", "")]` |
+| **Identifies a Method That Needs to Be Called Before the Execution of Any Tests in Test Assembly** | N/A | `[AssemblyInitialize]` | N/A |
+| **Identifies a Method That Needs to Be Called After Execution of Tests in Test Assembly** | N/A | `[AssemblyCleanUp]` | N/A |
+| **Attribute Adds Information About the Author of the Tests** | `[Author("John Doe")]` | `[Owner("John Doe")]` | Use `ITestOutputHelper` interface: `[Trait("Author", "John Doe")]` |
+| **Parallelism** | `[assembly: LevelOfParallelism(3)]` | N/A | `[assembly: CollectionBehavior(DisableTestParallelization = false)]` `[Collection("YourCollectionName")]` |
+| **Attribute Used for Maximum Time in Milliseconds for a Test Case** | `[Test, MaxTime(2000)]` | | |
+| **Attribute Used on a Test Method to Specify Execution Multiple Times** | `[Repeat(25)]` | `[TestMethod]` `[DataRow(1)]` | `[Theory]` `[InlineData(1)]` |
+| **Sets the Description Property of the Test** | `[Test]` `[Description("This is a description of the test")]` | `[TestMethod]` `[Description("This is a description of the test")]` | `/// <summary>` `/// This is a description of the test` `/// </summary>` `[Fact]` |
+
+### :dart:Run tests in parallel<br> 
+In NUnit, the ParallelScope is an enumeration that determines the scope of parallel execution for tests. It allows you to control which level of the test hierarchy (assembly, namespace, fixture, or individual test) should run in parallel.
+
+The ParallelScope enum has the following values:
+
+- None: No parallel execution. Tests are executed sequentially.
+- Self: Tests in the same fixture (class) can run in parallel, but different fixtures run sequentially.
+- Children: Child items of the same parent (e.g., tests in the same namespace or fixture) can run in parallel, but different parents run sequentially.
+- Fixtures: Entire fixtures (classes) can run in parallel, but different fixtures run sequentially.
+- All: All tests, regardless of their hierarchy, can run in parallel.
+
+Here is an example of how to use ParallelScope in NUnit:
+### At Assembly Level:
+```
+[assembly: Parallelizable(ParallelScope.Fixtures)]
+```
+This attribute specifies that all fixtures (test classes) in the assembly can be run in parallel.
+### At Assembly Level:
+```
+[assembly: Parallelizable(ParallelScope.Fixtures)]
+```
+### At Class Level:
+```
+[Parallelizable(ParallelScope.Children)]
+public class YourTestClass
+{
+    // Your test methods here
+}
+```
+This attribute specifies that all test methods within the class can be run in parallel.
+### At Method Level:
+```
+[Test, Parallelizable(ParallelScope.Self)]
+public void YourTestMethod()
+{
+    // Your test logic here
+}
+```
 ### :dart:PageObjects and PageFactory in C#<br> 
 The PageObject Design Pattern models areas of an UI as objects within test code which can also be considered as Object Repository for Web UI Elements. The functionality classes (PageObjects) in this design represent a logical relationship between the pages of the application. Each class is referred to as a PageObjects and returns other PageObjects to facilitate the flow between pages. Page Object class is responsible to find the WebElements of that page and also hold methods that perform operations on those WebElements.
 ```
